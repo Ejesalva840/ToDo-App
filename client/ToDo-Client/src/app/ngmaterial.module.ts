@@ -1,9 +1,7 @@
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // tslint:disable-next-line:max-line-length
-import {  MatButtonModule, MatListModule, MatMenuModule, MatIconModule, MatCardModule, MatToolbarModule, MatFormFieldModule, MatOptionModule, MatSelectModule } from '@angular/material';
+import {  MatButtonModule, MatListModule, MatMenuModule, MatIconModule, MatCardModule, MatInputModule, MatToolbarModule, MatFormFieldModule, MatOptionModule, MatSelectModule, MatDialogModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -16,7 +14,9 @@ import {  MatButtonModule, MatListModule, MatMenuModule, MatIconModule, MatCardM
     MatToolbarModule,
     MatFormFieldModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule,
+    MatInputModule
   ],
   exports: [
     MatButtonModule,
@@ -28,7 +28,9 @@ import {  MatButtonModule, MatListModule, MatMenuModule, MatIconModule, MatCardM
     MatToolbarModule,
     MatFormFieldModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule,
+    MatInputModule
   ]
 })
 export class MaterialAppModule {}

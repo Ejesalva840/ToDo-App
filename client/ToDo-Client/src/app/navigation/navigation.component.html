@@ -1,11 +1,21 @@
-<mat-sidenav-container [hasBackdrop]="true" class="sidenav-container">
+<mat-sidenav-container [hasBackdrop]="true" class="sidenav-container" fullscreen>
   <mat-sidenav
     #drawer
     class="sidenav"
     fixedInViewport="true"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="'over'">
-    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-toolbar color="primary">
+      <span>Lists:</span>
+      <span class="fill-remaining-space"></span>
+      <button
+        type="button"
+        aria-label="Add list"
+        mat-icon-button
+        (click)="openDialog('list')">
+        <mat-icon aria-label="Side nav toggle icon">add</mat-icon>
+      </button>
+    </mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#">Link 1</a>
       <a mat-list-item href="#">Link 2</a>
@@ -22,7 +32,15 @@
         >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>ToDo-Client</span>
+      <span>ToDo - Details</span>
+      <span class="fill-remaining-space"></span>
+      <button
+        type="button"
+        aria-label="Add list"
+        mat-icon-button
+        (click)="openDialog('item')">
+        <mat-icon aria-label="Side nav toggle icon">add</mat-icon>
+      </button>
     </mat-toolbar>
     <!-- Add Content Here -->
   </mat-sidenav-content>
