@@ -14,3 +14,16 @@
 .fill-remaining-space {
   flex: 1 1 auto;
 }
+
+.nav-active {
+  background-color: pink;
+  color: purple;
+}
+
+.nav-active md-icon {
+  color: purple;
+} 
+
+.mat-list-item:hover {
+  cursor: pointer;
+}

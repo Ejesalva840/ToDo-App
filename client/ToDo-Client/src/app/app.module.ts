@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationComponent } from './navigation/navigation.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListService } from './services/list.service';
+import { DetailDisplayComponent } from './detail-display/detail-display.component';
 
 @NgModule({
   imports: [
@@ -19,9 +21,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     NavigationComponent,
-    DialogComponent
+    DialogComponent,
+    DetailDisplayComponent
   ],
-  providers: [],
+  providers: [
+    ListService
+  ],
   bootstrap: [AppComponent],
   entryComponents: [
     DialogComponent

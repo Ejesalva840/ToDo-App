@@ -1,0 +1,10 @@
+<mat-card *ngIf='selectedList'>
+  <mat-card-title>{{selectedList.listName}} details</mat-card-title>
+  <mat-card-content>
+    <mat-selection-list #items>
+      <mat-list-option *ngFor="let item of selectedList.todoItems">
+        {{item.itemName}}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-card-content>
+</mat-card>

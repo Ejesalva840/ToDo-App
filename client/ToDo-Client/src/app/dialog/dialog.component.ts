@@ -1,6 +1,7 @@
 import {Component, Inject, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormBuilder, Validators, FormGroup} from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import { NavigationComponent } from '../navigation/navigation.component';
 
 @Component({
   selector: 'app-dialog',

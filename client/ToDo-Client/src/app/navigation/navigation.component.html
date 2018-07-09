@@ -1,6 +1,7 @@
 <mat-sidenav-container [hasBackdrop]="true" class="sidenav-container" fullscreen>
   <mat-sidenav
     #drawer
+    #sideNav
     class="sidenav"
     fixedInViewport="true"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
@@ -16,11 +17,9 @@
         <mat-icon aria-label="Side nav toggle icon">add</mat-icon>
       </button>
     </mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>
+    <mat-list #selectionList>
+      <mat-list-item *ngFor="let list of todoList" (click)="onListSelect(list)" [ngClass]="{'nav-active': list == selectedList}">{{list.listName}}</mat-list-item>
+    </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
@@ -32,7 +31,7 @@
         >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>ToDo - Details</span>
+      <span>ToDo - App</span>
       <span class="fill-remaining-space"></span>
       <button
         type="button"
@@ -42,6 +41,13 @@
         <mat-icon aria-label="Side nav toggle icon">add</mat-icon>
       </button>
     </mat-toolbar>
-    <!-- Add Content Here -->
+    <app-detail-display #listDetails></app-detail-display>
+    <mat-card *ngIf="!selectedList">
+      <mat-card-title>Welcome!</mat-card-title>
+      <mat-card-subtitle>Lets get working</mat-card-subtitle>
+      <mat-card-content>
+        Select a list to the left or create a new one!
+      </mat-card-content>
+    </mat-card>
   </mat-sidenav-content>
 </mat-sidenav-container>
