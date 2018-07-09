@@ -1,3 +1,4 @@
+import { ItemService } from './services/item.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,6 +10,7 @@ import { DialogComponent } from './dialog/dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListService } from './services/list.service';
 import { DetailDisplayComponent } from './detail-display/detail-display.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -16,7 +18,8 @@ import { DetailDisplayComponent } from './detail-display/detail-display.componen
     MaterialAppModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -25,7 +28,8 @@ import { DetailDisplayComponent } from './detail-display/detail-display.componen
     DetailDisplayComponent
   ],
   providers: [
-    ListService
+    ListService,
+    ItemService
   ],
   bootstrap: [AppComponent],
   entryComponents: [

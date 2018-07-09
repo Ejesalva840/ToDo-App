@@ -30,9 +30,11 @@ public class ToDoServerApplication {
 					new ToDoItem("Second Item")));
 			listRepo.save(list);
 			
+			ToDoItem setItem = new ToDoItem("Second Item");
+			setItem.setComplete(true);
 			list = new ToDoList("Second List");
 			list.setTodoItems(Arrays.asList(new ToDoItem("Test Item"),
-					new ToDoItem("Second Item")));
+					setItem));
 			listRepo.save(list);
 		};
 	}

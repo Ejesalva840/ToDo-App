@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 public class ToDoItem {
@@ -16,6 +17,7 @@ public class ToDoItem {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long itemId;
 	private String itemName;
+	@JsonProperty("isComplete")
 	private boolean isComplete;
 	
 	@JsonIgnore

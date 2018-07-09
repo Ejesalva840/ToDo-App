@@ -1,3 +1,4 @@
+import { MatSelectionList } from '@angular/material/list';
 import { ToDoList } from './../entities/todo-list';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -21,5 +22,4 @@ export class DetailDisplayComponent implements OnInit {
   }
 
   get selectedList(): ToDoList { return this._selectedList; }
-
 }
