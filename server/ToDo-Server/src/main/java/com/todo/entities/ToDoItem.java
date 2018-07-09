@@ -1,12 +1,13 @@
 package com.todo.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class ToDoItem {
@@ -17,8 +18,9 @@ public class ToDoItem {
 	private String itemName;
 	private boolean isComplete;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "listId")
+	@JsonIgnore
+	@ManyToOne
+	@JoinColumn(name = "listId", insertable=false, updatable=false)
 	private ToDoList list;
 	
 	protected ToDoItem() {}
